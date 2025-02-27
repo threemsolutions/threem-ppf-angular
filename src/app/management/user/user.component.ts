@@ -8,7 +8,6 @@ import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angu
 import { PpfService } from '../../shared/services/ppf.service';
 import { ToastrService } from 'ngx-toastr';
 import { jsPDF } from 'jspdf';
-import * as XLSX from 'xlsx';
 import { CommonModule, NgIf } from '@angular/common';
 import { HeaderComponent } from '../../Common/header/header.component';
 import { FooterComponent } from '../../Common/footer/footer.component';
@@ -296,20 +295,4 @@ compare(a: any, b: any, isAsc: boolean) {
     doc.save('user_list.pdf');
   }
 
-  exportToExcel(): void {
-    const worksheetData = this.dataSource.data.map((user, index) => ({
-      '#': index + 1,
-      'First Name': user.firstName,
-      'Last Name': user.lastName,
-      Email: user.emailId,
-      Phone: user.contactNumber,
-      Role: user.roleName,
-      
-    }));
-
-    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(worksheetData);
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Users');
-    XLSX.writeFile(wb, 'user_list.xlsx');
-  }
 }

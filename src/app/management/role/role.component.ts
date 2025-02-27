@@ -18,7 +18,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { FooterComponent } from '../../Common/footer/footer.component';
 import { HeaderComponent } from '../../Common/header/header.component';
 import jsPDF from 'jspdf';
-import * as XLSX from 'xlsx';
 import 'jspdf-autotable';
 
 
@@ -233,17 +232,5 @@ export class RoleComponent implements OnInit, AfterViewInit {
       body: tableData,
     });
     doc.save('roles.pdf');
-  }
-
-  exportToExcel(): void {
-    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(
-      this.roles.map((role) => ({
-        'Role Name': role.roleName,
-        Status: role.status === 1 ? 'Active' : role.status === 2 ? 'Inactive' : 'Deleted',
-      }))
-    );
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Roles');
-    XLSX.writeFile(wb, 'roles.xlsx');
   }
 }

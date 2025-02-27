@@ -19,7 +19,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import * as XLSX from 'xlsx';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import { MatTooltip } from '@angular/material/tooltip';
@@ -296,26 +295,6 @@ export class ClientComponent implements OnInit {
       default:
         return 'Unknown';
     }
-  }
-
-  exportToExcel(): void {
-    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(
-      this.clients.map((client) => ({
-        'Client Name': client.clientName,
-        Address: client.address,
-        Email: client.emailId,
-        'Number of Employees': client.numberOfEmployees,
-        Status: this.getStatusText(client.status),
-        contactNumber: client.contactNumber,
-        startDate: client.startDate,
-        endDate: client.endDate,
-      }))
-    );
-
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Clients');
-    XLSX.writeFile(wb, 'clients.xlsx');
-    this.toastr.success('Exported to Excel successfully!', 'Success'); // Toastr success
   }
 
   exportToPDF(): void {
