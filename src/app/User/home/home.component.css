@@ -1,0 +1,206 @@
+/* Header */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #5E8BAB;
+  color: white;
+  position: fixed; /* Make header fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.logo,
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.title {
+  text-align: center;
+  color: black;
+}
+
+/* Call-to-action Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cta-button {
+  border-radius: 10px;
+  padding: 12px 24px;
+  font: 400 16px Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.cta-button.primary {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #fff;
+  display: flex;
+  padding: 112px 64px;
+  gap: 80px;
+  align-items: center;
+  margin-top: 60px; /* Add margin-top to compensate for fixed header */
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  font: 700 56px/67px Roboto, sans-serif;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  font: 400 18px/27px Roboto, sans-serif;
+  color: #000;
+  margin-bottom: 32px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes popUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes hoverScale {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 1s ease-in-out;
+}
+
+.animate-pop-up {
+  animation: popUp 0.8s ease-in-out;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.8s ease-in-out;
+}
+
+.animate-hover-scale:hover {
+  animation: hoverScale 0.3s ease-in-out forwards;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+  margin-top: 120px; /* Add margin-top to avoid footer overlap */
+}
+
+.contact-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.contact-form textarea {
+  height: 100px;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #5E8BAB;
+  text-align: center;
+  color: white;
+  z-index: 1000; /* Ensure footer stays above content */
+}
+
+footer .logo,
+footer .title {
+  font-size: 24px;
+}
+
+footer .copyright {
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 100px 20px;
+    margin-top: 100px; /* Adjust margin-top for smaller screens */
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 40px;
+    line-height: 54px;
+  }
+
+  .contact-section {
+    margin-top: 120px; /* Make sure content fits on smaller screens */
+  }
+}

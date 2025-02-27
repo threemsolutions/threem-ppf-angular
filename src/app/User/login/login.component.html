@@ -1,0 +1,59 @@
+<app-header />
+<section class="login-section">
+  <div class="form-container">
+    <h2 class="form-title">User Login</h2>
+    <p class="form-description">Access your account securely and easily.</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email" class="form-label">Email <span class="required">*</span></label>
+        <input
+          id="email"
+          type="email"
+          formControlName="emailId"
+          class="form-input"
+          aria-required="true"
+          placeholder="Enter your email address"
+        />
+        <!-- Error Message for Email -->
+        <div class="error-message" *ngIf="loginForm.get('emailId')?.invalid && loginForm.get('emailId')?.touched">
+          <span *ngIf="loginForm.get('emailId')?.errors?.['required']">Email is required.</span>
+          <span *ngIf="loginForm.get('emailId')?.errors?.['email']">Enter a valid email address.</span>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password" class="form-label">Password <span class="required">*</span></label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="form-input"
+          aria-required="true"
+          placeholder="Enter your password"
+        />
+        <!-- Error Message for Password -->
+        <div class="error-message" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</span>
+          <span *ngIf="loginForm.get('password')?.errors?.['minlength']">
+            Password must be at least 6 characters long.
+          </span>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-button" [disabled]="!loginForm.valid">Log In</button>
+    </form>
+  </div>
+</section>
+
+<!-- Registration CTA Section -->
+<section class="cta-section">
+  <h2 class="cta-title">Don't have an account yet?</h2>
+  <p class="cta-description">Join our community today! Register now to unlock all the features of the PPF Management System.</p>
+  <button class="register-button" (click)="navigateToRegister()">Register</button>
+</section>
+
+<app-footer></app-footer>

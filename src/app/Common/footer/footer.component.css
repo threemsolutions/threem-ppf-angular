@@ -1,0 +1,44 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0.2px; /* Reduced padding */
+  background-color: #4A6E8D;
+  color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px; /* Set a smaller height */
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Prevents stretching on large screens */
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  flex-grow: 0;
+  margin-left: 0; /* Ensure it stays to the far left */
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+  margin-right: 20px; /* Add margin to the right to push it slightly */
+}
+
+.copyright {
+  font-size: 12px;
+  text-align: center;
+  flex-grow: 0;
+}

@@ -1,0 +1,162 @@
+/* Container for the entire layout */
+.manage-role-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Left Panel (Table Section) */
+.left-panel {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the mat-card inside the left panel */
+.left-panel mat-card {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* New container for buttons above the table */
+.top-buttons-container {
+  display: flex;
+  justify-content: flex-end; /* Align all buttons to the right */
+  gap: 15px; /* Space between Add Role and Export buttons */
+  margin-bottom: 20px; /* Space between buttons and table */
+}
+
+/* Action Buttons (Add Role) */
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Export Buttons Container */
+.export-buttons-container {
+  display: flex;
+  gap: 10px; /* Space between PDF and Excel buttons */
+  align-items: center;
+}
+
+
+
+/* Table Styling */
+mat-table {
+  width: 100%;
+  table-layout: auto;
+}
+
+/* Header and Cell Styling */
+.mat-header-cell {
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.mat-cell {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Status Styling */
+.mat-cell.active-status {
+  color: green;
+}
+
+.mat-cell.inactive-status {
+  color: orange;
+}
+
+.mat-cell.deleted-status {
+  color: red;
+}
+
+/* Action Icons Styling */
+.mat-cell .action-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Right Panel (Form Section) */
+.right-panel {
+  flex: 0 0 20%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  right: 0;
+  top: 60px;
+  bottom: 60px;
+  width: 20%;
+  height: calc(100vh - 120px);
+  z-index: 1000;
+}
+
+/* Form Styling */
+.right-panel mat-card-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.right-panel mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.right-panel button {
+  margin-top: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+/* Form Buttons */
+.right-panel mat-card-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  position: sticky;
+  bottom: 0;
+  background-color: #f9f9f9;
+  padding: 10px 0;
+  z-index: 1001;
+}
+
+/* Form Content Scrolling */
+.right-panel mat-card-content {
+  overflow-y: auto;
+  height: calc(100% - 60px);
+}
+
+/* View Label Styling */
+.view-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Pagination Controls */
+mat-paginator {
+  margin-top: 15px;
+}

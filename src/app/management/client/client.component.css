@@ -1,0 +1,186 @@
+/* Container for the entire layout */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+}
+ 
+/* Clients Table Section */
+.clients-list {
+  flex: 1; /* Takes full width by default */
+  padding: 20px;
+  overflow-y: auto; /* Add scroll if content overflows */
+  transition: flex 0.3s ease; /* Smooth transition for resizing */
+}
+ 
+/* Shrink the table when the form is visible */
+.clients-list.shrink {
+  flex: 0.8; /* Adjust this value to control the table width */
+}
+ 
+/* Client Form Section (Right Sidebar) */
+.client-form {
+  flex: 0.2; /* Takes less width */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd; /* Add a border to separate the form */
+  overflow-y: auto; /* Add scroll if content overflows */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  position: fixed;
+  right: 0;
+  top: 60px; /* Adjust this value based on header height */
+  bottom: 60px; /* Adjust this value based on footer height */
+  width: 20%; /* Adjust this value to control the form width */
+  height: calc(
+    100vh - 120px
+  ); /* Adjust height to fit between header and footer */
+  z-index: 1000; /* Ensure the form is above other content */
+}
+ 
+/* Table Styling */
+table.mat-table {
+  width: 100%;
+  table-layout: auto; /* Ensure table columns adjust to content */
+}
+ 
+/* Header and Cell Styling */
+.header-cell {
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+ 
+.cell {
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping in cells */
+}
+ 
+/* Status Styling */
+.active-status {
+  color: green;
+}
+ 
+.inactive-status {
+  color: orange;
+}
+ 
+.deleted-status {
+  color: red;
+}
+.table-container {
+  position: relative;
+  min-height: 200px; /* Ensure space for spinner */
+}
+
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Action Icons Styling */
+.action-icons {
+  display: flex;
+  gap: 8px; /* Space between icons */
+  justify-content: center; /* Center icons horizontally */
+}
+.actions-group {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between add & export buttons */
+}
+/* Export Buttons Styling */
+.export-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px;
+}
+ 
+/* Add Client Button Styling */
+.add-btn {
+  margin-top: 20px;
+}
+ 
+/* Form Styling */
+.client-form h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+ 
+.client-form mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+ 
+.client-form button {
+  margin-top: 10px;
+  margin-right: 10px;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+ 
+/* Ensure form buttons are visible */
+.client-form .form-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  justify-content: flex-end; /* Align buttons to the right */
+  position: sticky;
+  bottom: 0;
+  background-color: #f9f9f9;
+  padding: 10px;
+  z-index: 1001; /* Ensure buttons are above the form content */
+}
+ 
+/* Adjust form position to fit between header and footer */
+.client-form {
+  top: 80px; /* Adjust based on header height */
+  bottom: 80px; /* Adjust based on footer height */
+  height: calc(
+    100vh - 160px
+  ); /* Adjust height to fit between header and footer */
+}
+ 
+/* Ensure the form content scrolls properly */
+.client-form .form-content {
+  overflow-y: auto;
+  height: calc(100% - 60px); /* Adjust height to leave space for buttons */
+}
+.table-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.actions-container {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Space between Add User button and export icons */
+}
+.search-field {
+  flex: 1;
+  max-width: 400px; /* Increased width */
+  min-width: 250px; /* Ensures it doesn't shrink too much */
+  width: 40%;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,40 @@
+<header class="header-container">
+  <div class="logo">LOGO</div>
+  <div class="title">PPF Management</div>
+  
+  <div class="cta-buttons">
+    <button *ngIf="!isDashboard && !isManagementPage && currentRoute !== '/register'" 
+      class="cta-button primary" (click)="navigateTo('register')">
+      <i class="fas fa-user-plus"></i> Register
+    </button>
+      
+    <button *ngIf="!isDashboard && !isManagementPage && currentRoute !== '/login'" 
+      class="cta-button primary" (click)="navigateTo('login')">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </button>
+      
+    <button *ngIf="!isDashboard && !isManagementPage && (currentRoute === '/register' || currentRoute === '/login')" 
+      class="cta-button primary" (click)="navigateTo('home')">
+      <i class="fas fa-home"></i> Home
+    </button>
+
+    <div *ngIf="isDashboard" class="dropdown-container">
+      <button class="cta-button primary profile-btn" (click)="toggleDropdown()">My Profile ▼</button>
+      <div class="dropdown-menu" *ngIf="showDropdown">
+        <p><strong>Name:</strong> {{ userDetails?.name }}</p>
+        <p><strong>Email:</strong> {{ userDetails?.email }}</p>
+        <p><strong>Role:</strong> {{ userDetails?.role }}</p>
+        <hr>
+        <!-- <button class="cta-button logout" (click)="logout()">Logout</button> -->
+      </div>
+    </div>
+
+    <button *ngIf="isDashboard || isManagementPage" class="cta-button logout logout-right" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+    
+    <button *ngIf="isManagementPage" class="cta-button primary dashboard-btn" (click)="navigateTo('dashboard')">
+      <i class="fas fa-tachometer-alt"></i> Dashboard
+    </button>
+  </div>
+</header>

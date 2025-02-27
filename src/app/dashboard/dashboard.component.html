@@ -1,0 +1,240 @@
+<app-header />
+<div *ngIf="roleId === 1">
+  <main class="dashboard-container" role="main">
+    <header class="dashboard-header" role="banner">
+      <div class="header-container">
+        <h1 class="header-title">Welcome, Super Admin</h1>
+        <p class="header-description">
+          Manage your users and oversee operations with ease and efficiency.
+        </p>
+      </div>
+    </header>
+
+    <section class="dashboard-section" role="region" aria-labelledby="companies-heading">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Overview</span>
+          <h2 id="companies-heading" class="section-title">
+            Manage All Registered Companies Effortlessly
+          </h2>
+        </div>
+        <div class="section-body">
+          <p class="section-description">
+            As a Super Admin, you have the power to oversee all registered
+            companies within the PPF Management System. This centralized view
+            allows for efficient management and oversight of users and clients.
+          </p>
+          <div class="features-grid">
+            <div class="feature-card" role="article">
+              <i class="ti ti-building-skyscraper feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title">Company List</h3>
+              <p class="feature-description">
+                Access a comprehensive list of all registered Companies at your fingertips.
+              </p>
+            </div>
+            <div class="feature-card" role="article">
+              <i class="ti ti-clipboard-list feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title">Company Initiatives</h3>
+              <p class="feature-description">
+                Easily add, update, or remove companies as needed.
+              </p>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn-secondary" (click)="viewCompanies()" aria-label="View companies list">
+              Manage Companies
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-section" role="region" aria-labelledby="roles-heading">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Overview</span>
+          <h2 id="roles-heading" class="section-title">
+            Manage All Registered Roles Seamlessly
+          </h2>
+        </div>
+        <div class="section-body">
+          <p class="section-description">
+            As a Super Admin, you have the power to oversee all registered
+            Roles within the PPF Management System. This feature allows for
+            efficient management and oversight, ensuring a streamlined experience.
+          </p>
+          <div class="features-grid">
+            <div class="feature-card" role="article">
+              <i class="ti ti-users feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title">Role List</h3>
+              <p class="feature-description">
+                Access a comprehensive list of all registered users at your fingertips.
+              </p>
+            </div>
+            <div class="feature-card" role="article">
+              <i class="ti ti-settings feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title">Role Actions</h3>
+              <p class="feature-description">
+                Easily update, or remove users as needed.
+              </p>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn-secondary" (click)="viewRoles()" aria-label="View roles list">
+              Manage Roles
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-section" role="region" aria-labelledby="users-heading">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Overview</span>
+          <h2 id="users-heading" class="section-title">
+            Manage All Registered Users Seamlessly
+          </h2>
+        </div>
+        <div class="section-body">
+          <p class="section-description">
+            As a Super Admin, you have the power to oversee all registered
+            users within the PPF Management System. This feature allows for
+            efficient management and oversight, ensuring a streamlined experience.
+          </p>
+          <div class="features-grid">
+            <div class="feature-card" role="article">
+              <i class="ti ti-user feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title">User  List</h3>
+              <p class="feature-description">
+                Access a comprehensive list of all registered users at your fingertips.
+              </p>
+            </div>
+            <div class="feature-card" role="article">
+              <i class="ti ti-user-cog feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title">User  Actions</h3>
+              <p class="feature-description">
+                Easily update, or remove users as needed.
+              </p>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn-secondary" (click)="viewUsers()" aria-label="View users list">
+              Manage Users
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div *ngIf="roleId === 2">
+  <main class="dashboard-container" role="main">
+    <header class="dashboard-header" role="banner">
+      <div class="header-container">
+        <h1 class="header-title">Welcome, Admin</h1>
+        <p class="header-description">
+          Manage your users and oversee operations with ease and efficiency.
+        </p>
+      </div>
+    </header>
+
+    <section class="management-section" aria-labelledby="management-title">
+      <div class="management-content">
+        <div class="intro-column">
+          <span class="section-tag">Manage</span>
+          <h2 id="management-title" class="section-heading">
+            Effortlessly Manage Registered Users Today
+          </h2>
+        </div>
+
+        <div class="features-column">
+          <p class="features-description">
+            As an admin, you have the power to oversee all registered users.
+            Easily update or remove user accounts to maintain an organized system.
+          </p>
+
+          <div class="features-grid">
+            <article class="feature-card" tabindex="0">
+              <div class="feature-icon">
+                <i class="ti ti-users" aria-hidden="true"></i>
+              </div>
+              <h3 class="feature-title">User  List</h3>
+              <p class="feature-description">
+                Access a comprehensive list of all registered users at your
+                fingertips.
+              </p>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-icon">
+                <i class="ti ti-settings" aria-hidden="true"></i>
+              </div>
+              <h3 class="feature-title">User  Actions</h3>
+              <p class="feature-description">
+                Easily update, or remove users as needed.
+              </p>
+            </article>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-secondary" (click)="viewUsers()" aria-label="View users list">
+              Manage Users
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div *ngIf="roleId === 3">
+  <header class="dashboard-header" role="banner">
+    <div class="header-container">
+      <h1 class="header-title">Welcome, User</h1>
+      <p class="header-description">
+        We're glad to have you here! Manage your details and preferences easily.
+      </p>
+    </div>
+  </header>
+  <section class="details-section" role="region" aria-labelledby="overview-title">
+    <div class="details-content">
+      <div class="overview-column">
+        <h2 id="overview-title" class="overview-label">Overview</h2>
+        <h3 class="overview-heading">
+          Access Comprehensive details about your personal PPF Account at your Fingertips
+        </h3>
+      </div>
+      <div class="info-column">
+        <div class="info-content">
+          <p class="info-text">
+            Your user profile is the gateway to managing your personal details. 
+            Easily view and update your information to ensure your account is always up-to-date.
+          </p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon" aria-hidden="true">
+                <i class="ti ti-box"></i>
+              </div>
+              <h4 class="feature-title">User  Details</h4>
+              <p class="feature-description">
+                Access Your details at Fingertips, As a User You can View the PPF Details
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="action-container">
+          <button class="btn-secondary" (click)="viewUsers()" aria-label="View users list">
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div *ngIf="!roleId">
+  <p>Loading dashboard...</p>
+</div>
+<app-footer />

@@ -1,0 +1,93 @@
+.header-container {
+  display: flex;
+  align-items: center; /* Vertically center the items */
+  justify-content: space-between; /* Space between logo/title and buttons */
+  padding: 12px 30px; /* Increased padding for better spacing */
+  background-color: #4A6E8D; /* Background color */
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px; /* Fixed height */
+  border-bottom: 1px solid #dee2e6; /* Optional: Add a bottom border */
+  box-sizing: border-box; /* Ensure padding is inside the width */
+}
+
+.logo {
+  font-size: 20px; /* Logo font size */
+  font-weight: bold; /* Make logo bold */
+  text-align: left;
+}
+
+.title {
+  font-size: 20px; /* Title font size */
+  font-weight: bold; /* Make title bold */
+  text-align: center; /* Center the title */
+  flex-grow: 1; /* Ensures title takes center position */
+}
+
+.cta-buttons {
+  display: flex; /* Flexbox for buttons */
+  align-items: center; /* Vertically center buttons */
+  gap: 12px; /* Space between buttons */
+  margin-left: 20px; /* Move buttons slightly to the left */
+}
+
+.cta-button {
+  border-radius: 6px; /* Rounded corners */
+  padding: 8px 16px; /* Button padding */
+  font-size: 14px; /* Font size for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover */
+}
+
+.cta-button.primary {
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Text color for primary button */
+  border: none;
+}
+
+.cta-button.logout {
+  background-color: #dc3545; /* Logout button color */
+  color: white; /* Text color for logout button */
+  border: none;
+}
+
+/* Dropdown menu styling */
+.dropdown-container {
+  position: relative; /* Position relative for dropdown */
+}
+
+.dropdown-menu {
+  position: absolute; /* Position dropdown menu */
+  top: 100%; /* Position below the button */
+  right: 0; /* Align to the right */
+  background-color: white; /* Dropdown background color */
+  border: 1px solid #dee2e6; /* Optional: Add border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  z-index: 1000; /* Ensure dropdown is above other elements */
+  padding: 10px; /* Padding for dropdown */
+}
+.cta-button {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  padding: 10px 15px; /* Padding for buttons */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.cta-button i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0; /* Light background on hover */
+}
+.dropdown-menu p {
+  margin: 0; /* Remove default margin */
+}

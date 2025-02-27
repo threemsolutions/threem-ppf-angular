@@ -1,0 +1,206 @@
+/* General Styles */
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  min-height: 100vh; /* Make body at least as tall as the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #5E8BAB;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+/* Footer Styles */
+app-footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Login Section Styles */
+.login-section {
+  background-color: #fff;
+  padding: 80px 40px; /* Added padding to ensure content fits properly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Ensures the section takes up remaining space */
+  margin-top: 80px; /* Added margin to avoid overlap with fixed header */
+  opacity: 0; /* Start hidden for animation */
+  animation: fadeIn 0.5s forwards; /* Fade in effect */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.form-container {
+  background-color: rgb(136, 157, 173);
+  border: 1px solid #000;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transform: translateY(-20px); /* Start slightly above */
+  animation: slideIn 0.5s forwards; /* Slide in effect */
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.form-title {
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.form-description {
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+}
+
+.form-input {
+  border: 1px solid #000;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transition for focus */
+}
+
+.form-input:focus {
+  border-color: #4A8B9F; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(74, 139, 159, 0.5); /* Add shadow on focus */
+}
+
+.submit-button {
+  background-color: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s; /* Transition for hover */
+}
+
+.submit-button:hover {
+  background-color: #333;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+.submit-button:disabled {
+  background-color: black;
+  cursor: not-allowed;
+}
+
+.signup-prompt {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.signup-link {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Call-to-Action Section Styles */
+.cta-section {
+  background-color: rgb(97, 119, 135);
+  padding: 64px 32px;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.cta-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 24px;
+}
+.error-message {
+  color: #d9534f; /* Bootstrap danger color */
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+.register-button {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s; /* Transition for hover */
+}
+
+.register-button:hover {
+  background-color: #333;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .form-title {
+    font-size: 20px;
+  }
+
+  .cta-title {
+    font-size: 20px;
+  }
+
+  .register-button {
+    width: 100%;
+  }
+}

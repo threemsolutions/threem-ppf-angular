@@ -1,0 +1,177 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background-color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Main Container */
+.user-management-container {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px 70px; /* Adjusted for header & footer */
+  max-width: 95%;
+  width: 100%;
+  margin: auto;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Sidebar Styles */
+.user-sidebar {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+}
+
+/* Title Styles */
+.registration-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Search and Export Container */
+.search-export-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+  
+}
+/* Search Bar Styles */
+.search-bar {
+  width: 300px; /* Adjust width as needed */
+  max-width: 100%;
+  min-width: 250px;
+}
+
+/* Table Styles */
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  word-break: break-word;
+}
+
+.mat-header-cell {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.mat-row:hover {
+  background-color: #f9f9f9;
+}
+
+/* Paginator Styles */
+.mat-paginator {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Edit User Form Styles */
+.edit-form {
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+}
+
+/* Card Styles */
+mat-card {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Button Styles */
+button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+/* User Details Styles */
+.userDetails {
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .search-export-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .export-buttons {
+    display: flex;
+  gap: 10px;
+  }
+
+  .mat-header-cell, .mat-cell {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .edit-form, .userDetails, .user-sidebar {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .user-management-container {
+    padding: 100px 10px 80px; /* More spacing for header/footer */
+  }
+}

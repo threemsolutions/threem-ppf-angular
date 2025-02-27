@@ -1,0 +1,113 @@
+
+<app-header></app-header>
+
+<div class="manage-role-container">
+  <div class="left-panel">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Manage Role</mat-card-title>
+      </mat-card-header>
+      <div class="top-buttons-container">
+        <div class="action-buttons" *ngIf="!isAddingRole">
+          <button mat-raised-button color="primary" (click)="addRole()">
+            <mat-icon>add</mat-icon> Add Role
+          </button>
+        </div>
+        <div class="export-buttons-container">
+          <button mat-icon-button matTooltip="Export as PDF" color="accent" (click)="exportToPDF()">
+            <mat-icon>picture_as_pdf</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Export as Excel" color="primary" (click)="exportToExcel()">
+            <mat-icon>description</mat-icon>
+          </button>
+        </div>        
+      </div>
+      
+      <mat-table [dataSource]="pagedRoles" matSort (matSortChange)="sortTable($event)">
+        <ng-container matColumnDef="roleName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Role Name</mat-header-cell>
+          <mat-cell *matCellDef="let role">{{ role.roleName }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+          <mat-cell *matCellDef="let role">
+            {{ role.status === 1 ? 'Active' : role.status === 2 ? 'Inactive' : 'Deleted' }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let role">
+            <button mat-icon-button color="primary" (click)="editRole(role)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteRole(role.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="accent"  (click)="viewRole(role)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" 
+                     [length]="roles.length" (page)="handlePageEvent($event)">
+      </mat-paginator>
+    </mat-card>
+  </div>
+
+  <div class="right-panel" *ngIf="selectedRole.id || isAddingRole || isViewingRole">
+    <mat-card>
+      <form #roleForm="ngForm" (ngSubmit)="onSubmit(roleForm)">
+        <mat-card-content>
+          <mat-form-field appearance="fill">
+            <mat-label>Role Name</mat-label>
+            <input matInput *ngIf="!isViewingRole" 
+                   [(ngModel)]="selectedRole.roleName" 
+                   name="roleName" 
+                   placeholder="Enter Role Name" 
+                   required>
+            <div *ngIf="isViewingRole" class="view-label">{{ selectedRole.roleName }}</div>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <mat-select *ngIf="!isViewingRole" 
+                       [(ngModel)]="selectedRole.status" 
+                       name="status" 
+                       required>
+              <mat-option value="1">Active</mat-option>
+              <mat-option value="2">Inactive</mat-option>
+              <mat-option value="3">Deleted</mat-option>
+            </mat-select>
+            <div *ngIf="isViewingRole" class="view-label">
+              {{ selectedRole.status === 1 ? 'Active' : selectedRole.status === 2 ? 'Inactive' : 'Deleted' }}
+            </div>
+          </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-raised-button *ngIf="isViewingRole" (click)="cancelViewRole()">Close</button>
+          
+          <ng-container *ngIf="!isAddingRole && !isViewingRole">
+            <button mat-raised-button color="primary" [disabled]="roleForm.invalid" (click)="updatedRole()">Update Role</button>
+            <button mat-button (click)="cancelEdit()">Cancel</button>
+          </ng-container>
+
+          <ng-container *ngIf="isAddingRole">
+            <button mat-raised-button color="primary" [disabled]="roleForm.invalid" (click)="createRole()">Create Role</button>
+            <button mat-button (click)="cancelAddRole()">Cancel</button>
+          </ng-container>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
+<app-footer></app-footer>
+

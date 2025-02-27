@@ -1,0 +1,446 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+/* Header Styles */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #5E8BAB;
+  color: #fff;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.header-description {
+  font-size: 16px;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  padding: 20px;
+  opacity: 0; /* Start hidden for animation */
+  animation: fadeIn 0.5s forwards; /* Fade in effect */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+/* Section Styles */
+.dashboard-section {
+  background-color: rgb(136, 157, 173);
+  border: 1px solid #000;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-20px); /* Start slightly above */
+  animation: slideIn 0.5s forwards; /* Slide in effect */
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header {
+  margin-bottom: 16px;
+}
+
+.section-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+  .section-description {
+    font-size: 16px; /* Slightly larger font size for better readability */
+    margin-bottom: 16px;
+    padding: 12px; /* Add padding for better spacing */
+    background-color: #e9f5ff; /* Light blue background for emphasis */
+    border-left: 4px solid #007bff; /* Blue left border for a stylish look */
+    border-radius: 4px; /* Rounded corners */
+    line-height: 1.6; /* Improved line height for readability */
+    color: #333; /* Darker text for better contrast */
+  }
+
+/* Feature Card Styles */
+.features-grid {
+  display: flex; /* Change to flex for right alignment */
+  justify-content: flex-end; /* Align feature cards to the right */
+  gap: 16px; /* Space between cards */
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.feature-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Slightly lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.feature-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.feature-description {
+  font-size: 14px;
+}
+
+/* Button Styles */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.btn-secondary {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s; /* Transition for hover */
+  margin-top: 10px; /* Add margin for spacing */
+}
+
+.btn-secondary:hover {
+  background-color: #333;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+/* Header Styles */
+.dashboard-header {
+  background-color: #f4f7fa;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.header-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.header-description {
+  font-size: 1.2em;
+}
+
+/* Details Section */
+/* Details Section */
+.details-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Flexbox Layout for Details Content */
+.details-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between columns */
+}
+
+/* Overview Column */
+.overview-column {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for contrast */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.overview-column:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.overview-label {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #007bff; /* Primary color for headings */
+}
+
+.overview-heading {
+  font-size: 1.4em;
+  color: #555;
+}
+
+/* Info Column */
+.info-column {
+  flex: 2;
+  padding: 20px;
+  background-color: #ffffff; /* White background for clarity */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.info-column:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.info-text {
+  font-size: 16px; /* Slightly larger font size for better readability */
+  margin-bottom: 20px;
+  padding: 12px; /* Add padding for better spacing */
+  background-color: #f8f9fa; /* Light gray background for contrast */
+  border-left: 4px solid #28a745; /* Green left border for a stylish look */
+  border-radius: 4px; /* Rounded corners */
+  line-height: 1.6; /* Improved line height for readability */
+  color: #333; /* Darker text for better contrast */
+}
+
+/* Feature List */
+.feature-list {
+  margin-top: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e9ecef; /* Light background for feature items */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.feature-item:hover {
+  background-color: #dee2e6; /* Darker background on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.feature-icon {
+  font-size: 2em;
+  margin-right: 10px;
+  color: #007bff; /* Primary color for icons */
+}
+
+.feature-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333; /* Darker text for better contrast */
+}
+
+.feature-description {
+  font-size: 14px; /* Keep the same font size */
+  color: #666; /* Lighter text for descriptions */
+  padding: 8px; /* Add padding for better spacing */
+  background-color: #f1f1f1; /* Light gray background for emphasis */
+  border-radius: 4px; /* Rounded corners */
+  line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Action Container */
+.action-container {
+  margin-top: 20px;
+  text-align: right; /* Align button to the right */
+}
+
+.view-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Overview Column */
+.overview-column {
+  flex: 1;
+  padding: 20px;
+}
+
+.overview-label {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.overview-heading {
+  font-size: 1.4em;
+  color: #555;
+}
+
+/* Info Column */
+.info-column {
+  flex: 2;
+  padding: 20px;
+}
+
+.info-text {
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Feature List */
+.feature-list {
+  margin-top: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2em;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.feature-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.feature-description {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Action Container */
+.action-container {
+  margin-top: 20px;
+}
+
+.view-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .header-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .feature-card {
+    padding: 12px;
+  }
+
+  .btn-secondary {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+.dashboard-section {
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.feature-card {
+  padding: 12px; /* Reduced padding */
+}
+
+.section-body {
+  padding: 16px; /* Adjust as needed */
+}
